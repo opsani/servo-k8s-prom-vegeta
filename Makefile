@@ -1,4 +1,4 @@
-IMG_NAME ?= opsani/servo-k8s-prom-vegeta
+IMG_NAME ?= opsani/servo-k8s-vegeta
 IMG_TAG ?= latest
 
 container:
