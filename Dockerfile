@@ -1,14 +1,17 @@
-FROM python:3.6-slim
+FROM python:3.7-slim
 
-LABEL maintainer="robert@opsani.com"
+LABEL maintainer="support@opsani.com"
 LABEL description="A servo for opsani.com optimization"
 LABEL plugins="servo-prom, servo-k8s, servo-vegeta"
-LABEL version="0.1.1"
+LABEL version="1.0.0"
+LABEL k8s-version="v1.18.2"
+LABEL vegeta-version="v12.8.3"
+
 WORKDIR /servo
 
 ARG VEGETA_VER
-ENV VEGETA_VER=v12.8.1
-ADD  https://storage.googleapis.com/kubernetes-release/release/v1.16.2/bin/linux/amd64/kubectl /usr/local/bin/
+ENV VEGETA_VER=v12.8.3
+ADD  https://storage.googleapis.com/kubernetes-release/release/v1.18.2/bin/linux/amd64/kubectl /usr/local/bin/
 
 # Install dependencies
 RUN apt update && apt -y install procps tcpdump curl wget
